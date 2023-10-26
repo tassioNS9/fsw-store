@@ -29,6 +29,7 @@ model Product {
   category Category @relation(fields: [categoryId], references: [id])
   discountPercentage Int @default(0)
   // total price nao vai ser salvo no banco sera calculado
+  OrderProduct       OrderProduct[]
 }
 
 model Account {
@@ -66,6 +67,33 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+   Order         Order[]
+}
+
+model Order {
+  id            String         @id @default(uuid())
+  userId        String
+  user          User           @relation(fields: [userId], references: [id])
+  orderProducts OrderProduct[]
+  createdAt     DateTime       @default(now())   // cria a data no horario automaticamente
+  updatedAt     DateTime       @default(now()) @updatedAt
+  status        OrderStatus    @default(WAITING_FOR_PAYMENT)
+}
+
+enum OrderStatus {
+  WAITING_FOR_PAYMENT
+  PAYMENT_CONFIRMED
+}
+
+model OrderProduct {
+  id                 String  @id @default(uuid())
+  productId          String
+  product            Product @relation(fields: [productId], references: [id])
+  orderId            String
+  order              Order   @relation(fields: [orderId], references: [id])
+  basePrice          Decimal @db.Decimal(8, 2)
+  discountPercentage Int     @default(0)
+  quantity           Int
 }
 
 model VerificationToken {

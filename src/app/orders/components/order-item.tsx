@@ -11,7 +11,7 @@ import {
   import { Separator } from "@/components/ui/separator";
   import { useMemo } from "react";
   import { computeProductTotalPrice } from "@/helpers/product";
-  import { getOrderStatus } from "../helpers/status";
+  import { getOrderStatus } from "./helpers/status";
   
   interface OrderItemProps {
     order: Prisma.OrderGetPayload<{ // neste caso sera pra pegar o order com o join

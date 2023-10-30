@@ -1,4 +1,3 @@
-import { metadata } from "./../../../layout";
 import { prismaClient } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
@@ -32,7 +31,7 @@ export const POST = async (request: Request) => {
       },
     );
 
-    const lineItems = sessionWithLineItems.line_items;
+   //const lineItems = sessionWithLineItems.line_items;
 
     await prismaClient.order.update({
       where: {

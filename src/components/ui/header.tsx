@@ -95,17 +95,6 @@ const Header = () => {
                 Fazer Logout
               </Button>
             )}
-              <SheetClose asChild>
-              <Link href="/orders">
-                <Button
-                  variant="outline"
-                  className="w-full justify-start gap-2"
-                >
-                  <PackageSearchIcon size={16} />
-                  Meus Pedidos
-                </Button>
-              </Link>
-            </SheetClose>
 
             <SheetClose asChild>
               <Link href="/">
@@ -115,6 +104,18 @@ const Header = () => {
                 >
                   <HomeIcon size={16} />
                   Início
+                </Button>
+              </Link>
+            </SheetClose>
+            
+            <SheetClose asChild>
+              <Link href="/orders">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start gap-2"
+                >
+                  <PackageSearchIcon size={16} />
+                  Meus Pedidos
                 </Button>
               </Link>
             </SheetClose>
@@ -142,8 +143,6 @@ const Header = () => {
                 </Button>
               </Link>
             </SheetClose>
-
-          
           </div>
         </SheetContent>
       </Sheet>
@@ -158,7 +157,7 @@ const Header = () => {
         <SheetTrigger asChild>
           <Button size="icon" variant="outline">
             <ShoppingCartIcon />
-            <CartCount/>
+            <CartCount />
           </Button>
         </SheetTrigger>
 

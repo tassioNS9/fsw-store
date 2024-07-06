@@ -10,7 +10,6 @@ export const POST = async (request: Request) => {
   const signature = request.headers.get("stripe-signature");
 
   if (!signature) {
-    console.log("ooooi!!!");
     return NextResponse.error();
   }
 

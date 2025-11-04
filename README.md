@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 FSW Store
 
-## Getting Started
+**FSW Store** é uma loja virtual de produtos eletrônicos desenvolvida com **Next.js 13**, **React**, **TypeScript** e **Prisma**.  
+O projeto utiliza **Stripe** para processamento de pagamentos e segue boas práticas de organização de código, tipagem e arquitetura modular.
 
-First, run the development server:
+---
 
+## 🚀 Tecnologias Principais
+
+- **Next.js 13** — Framework React com suporte a rotas, SSR e API routes  
+- **React 18** — Biblioteca principal de UI  
+- **TypeScript** — Tipagem estática e segurança em tempo de compilação  
+- **Prisma ORM** — Mapeamento objeto-relacional e integração com banco de dados  
+- **NextAuth.js** — Autenticação com adaptador Prisma  
+- **Tailwind CSS** — Estilização com classes utilitárias  
+- **Stripe** — Integração de pagamentos online  
+- **Radix UI** — Componentes acessíveis e personalizáveis  
+- **Lucide React** — Ícones vetoriais para a interface  
+
+---
+
+## 🧱 Padrões e Arquitetura
+
+- **Arquitetura baseada em componentes** (Atomic Design)  
+- **Padrão de organização com `app/` directory (Next.js 13+)**  
+- **Autenticação com NextAuth e adaptador Prisma**  
+- **Camada de persistência com Prisma Client**  
+- **Boas práticas com ESLint e Prettier configurados**  
+- **Padrões de estilo com Tailwind + Prettier Plugin TailwindCSS**
+
+---
+
+## ⚙️ Configuração e Setup
+
+### 1. Clonar o repositório
 ```bash
+git clone https://github.com/seu-usuario/fsw-store.git
+cd fsw-store
+
+2. Instalar dependências
+npm install
+# ou
+yarn install
+
+3. Configurar variáveis de ambiente
+DATABASE_URL="postgresql://user:password@localhost:5432/fswstore"
+NEXTAUTH_SECRET="sua_chave_secreta"
+NEXTAUTH_URL="http://localhost:3000"
+STRIPE_SECRET_KEY="sua_chave_stripe"
+STRIPE_PUBLIC_KEY="sua_chave_publica"
+
+4. Gerar o client do Prisma
+npx prisma generate
+
+5. Rodar o servidor de desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
